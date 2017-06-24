@@ -10,7 +10,7 @@ maxTrials = 10000;
 H_gt = [1 .2 0; .1 1 0; .5 .2 1];
 distRatio = 0.5;
 image1 = 'bird.pgm';
-image2 = 'bird_tranhjmn.pgm';
+image2 = 'bird_tran.pgm';
 
 [ ~, matches, ~ ] = match(image1, image2, distRatio);
 H_ransac = RANSAC_Wrapper(matches, fittingfn, distfn, degenfn, s, t, feedback, maxDataTrials, maxTrials);
