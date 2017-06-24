@@ -6,9 +6,7 @@ function [TransformedIm] = ComputeProjective(Im, H)
         for j = 1:m
             pixel = [i;j;1];
             newPixel = uint32(H*pixel);
-            for p = 1:k
-                TransformedIm(newPixel(1), newPixel(2), p) = Mat(i, j, p);
-            end
+            TransformedIm(newPixel(1), newPixel(2), :) = Mat(i, j, :);
         end
     end
     TransformedIm = uint8(TransformedIm);
